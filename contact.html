@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    function kirimForm() {
+      // Validasi formulir
+      const nama = document.getElementById('nama').value;
+      const email = document.getElementById('email').value;
+      const minat = document.getElementById('minat').value;
+      
+      if (!nama || !email || !minat) {
+        alert("Mohon lengkapi semua field!");
+        return false;
+      }
+      
+      // Animasi sukses
+      document.getElementById('form-container').innerHTML = `
+        <div style="text-align: center; padding: 40px 20px;">
+          <div style="width: 80px; height: 80px; background-color: #2ecc71; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px;">✓</div>
+          <h2>Terima Kasih, ${nama}!</h2>
+          <p>Pendaftaran Anda berhasil dikirim. Tim kami akan menghubungi Anda melalui email dalam 24 jam.</p>
+          <button onclick="window.location.reload()" style="background-color: #3498db; color: white; border: none; padding: 10px 25px; border-radius: 5px; margin-top: 20px; cursor: pointer;">Kirim Lagi</button>
+        </div>
+      `;
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Hubungi Kami</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang</a></li>
+        <li><a href="features.html">Fitur</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section>
+    <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+      <div style="flex: 1; min-width: 300px;">
+        <h2>Formulir Pendaftaran</h2>
+        <p style="margin-bottom: 30px;">Daftar sekarang untuk mendapatkan akses gratis 7 hari ke semua materi premium BelajarPintar!</p>
+        
+        <div id="form-container">
+          <form onsubmit="return kirimForm();" id="contact-form">
+            <div style="margin-bottom: 20px;">
+              <label for="nama" style="font-weight: 500; display: block; margin-bottom: 8px;">Nama Lengkap</label>
+              <input type="text" id="nama" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;">
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+              <label for="email" style="font-weight: 500; display: block; margin-bottom: 8px;">Email</label>
+              <input type="email" id="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;">
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+              <label for="minat" style="font-weight: 500; display: block; margin-bottom: 8px;">Minat Belajar</label>
+              <select id="minat" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; background-color: white;">
+                <option value="">-- Pilih --</option>
+                <option value="bahasa">Bahasa</option>
+                <option value="matematika">Matematika</option>
+                <option value="sains">Sains</option>
+                <option value="komputer">Ilmu Komputer</option>
+                <option value="sosial">Ilmu Sosial</option>
+              </select>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+              <label for="pesan" style="font-weight: 500; display: block; margin-bottom: 8px;">Pesan (Opsional)</label>
+              <textarea id="pesan" rows="4" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; resize: vertical;"></textarea>
+            </div>
+            
+            <button type="submit" style="background-color: #3498db; color: white; border: none; padding: 14px 28px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 500; transition: background 0.3s ease;">Daftar Sekarang</button>
+          </form>
+        </div>
+      </div>
+      
+      <div style="flex: 1; min-width: 300px;">
+        <h2>Informasi Kontak</h2>
+        <div style="margin-top: 30px;">
+          <div style="display: flex; align-items: center; margin-bottom: 25px;">
+            <div style="width: 50px; height: 50px; background-color: #e9f5fe; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px;">📍</div>
+            <div>
+              <h3 style="font-size: 18px; margin-bottom: 5px;">Alamat</h3>
+              <p style="color: #555;">Jl. Wates No. 16, Yogyakarta, Indonesia</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; margin-bottom: 25px;">
+            <div style="width: 50px; height: 50px; background-color: #e9f5fe; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px;">📞</div>
+            <div>
+              <h3 style="font-size: 18px; margin-bottom: 5px;">Telepon</h3>
+              <p style="color: #555;">+62 1234 5678 90</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; margin-bottom: 25px;">
+            <div style="width: 50px; height: 50px; background-color: #e9f5fe; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px;">✉️</div>
+            <div>
+              <h3 style="font-size: 18px; margin-bottom: 5px;">Email</h3>
+              <p style="color: #555;">info@belajarpintar.id</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center;">
+            <div style="width: 50px; height: 50px; background-color: #e9f5fe; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px;">⏰</div>
+            <div>
+              <h3 style="font-size: 18px; margin-bottom: 5px;">Jam Kerja</h3>
+              <p style="color: #555;">Senin - Jumat: 09:00 - 17:00 WIB</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <h2>Lokasi Kami</h2>
+    <div style="margin-top: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      <!-- Google Maps Embed -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8842932669837!2d110.35000231478603!3d-7.8026513944386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787bd5b6bc1%3A0x21723fd4d3684f71!2sJl.%20Wates%20No.16%2C%20Yogyakarta!5e0!3m2!1sid!2sid!4v1652947854583!5m2!1sid!2sid" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div style="background-color: #e9f5fe; padding: 20px; margin-top: 15px; border-radius: 10px; display: flex; align-items: center;">
+      <div style="width: 50px; height: 50px; background-color: #3498db; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 24px;">📍</div>
+      <div>
+        <h3 style="margin-bottom: 5px; color: #2c3e50;">Alamat Lengkap</h3>
+        <p style="margin: 0; color: #555;">BelajarPintar, Jl. Wates No. 16, Yogyakarta, Indonesia 55167</p>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 BelajarPintar | Platform Belajar Online Terbaik</p>
+  </footer>
+</body>
+</html>
